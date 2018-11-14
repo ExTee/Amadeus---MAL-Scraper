@@ -26,8 +26,8 @@ def get_users_from_club(CID , output_folder = "../data/"):
         
         #Termination condition when no table is found
         if html_soup.table == None:
-            print ("No more users to grab")
-            break
+            print ("Club {} : No more users to grab".format(CID))
+            return
         else:
 
             #Get html table containing users
@@ -53,4 +53,4 @@ def get_users_from_club(CID , output_folder = "../data/"):
             
 
 
-def club_loop()
+# def club_loop()

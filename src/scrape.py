@@ -1,7 +1,10 @@
 import utilities
 
 def main():
-	utilities.get_users_from_club(551)
+
+	#Loop through all clubs
+	for club_id in range(1,100000):
+		utilities.get_users_from_club(club_id)
 
 
 
