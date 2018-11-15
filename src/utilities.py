@@ -1,6 +1,7 @@
 from requests import get
 from bs4 import BeautifulSoup as soup
 from time import sleep
+import re
 
 '''
     Obtains usernames from url, save them into csv file corresponding to Club ID.
