@@ -1,7 +1,7 @@
 
-<p align="center">
+
 # Amadeus - MyAnimeList Scraper ![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)
-</p>p>
+
 
 <p align="center">
 <img width="460" height="300" src="https://i.imgur.com/K4B6uHU.png">
