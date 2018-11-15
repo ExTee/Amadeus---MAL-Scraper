@@ -4,7 +4,7 @@ def main():
 	#Loop through all clubs
 
 	#Serialized run
-	for forum_id in range(1,1750000):
+	for forum_id in range(1,1751000):
 		utilities.get_users_from_forum_thread(forum_id)
 
 
