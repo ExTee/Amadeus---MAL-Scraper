@@ -1,7 +1,7 @@
-<p align="center">
 
 
 # Amadeus - MyAnimeList Scraper ![Build Status]
+<p align="center">
 <img width="460" height="300" src="https://i.imgur.com/K4B6uHU.png">
 
 </p>
