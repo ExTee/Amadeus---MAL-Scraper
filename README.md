@@ -1,5 +1,10 @@
+<p align="center">
+  <img width="460" height="300" src="http://www.fillmurray.com/460/300">
+
 # Amadeus - MyAnimeList Scraper ![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)
 ![img](https://i.imgur.com/K4B6uHU.png)
+
+</p>
 
 Amadeus is a collection of scripts aiming at scraping data from [MyAnimeList.org](myanimelist.org) , a website containing anime and reviews.
 
