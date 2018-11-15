@@ -27,7 +27,7 @@ def parallel_scrape_club_range(r):
 	Sends requests parallel.
 	Use at your own risk. Requests migh
 '''
-def parallel_scrape_usernames():
+def parallel_scrape_club_usernames():
 	#Parallel run
 	pool = mp.Pool(processes = 4)
 
