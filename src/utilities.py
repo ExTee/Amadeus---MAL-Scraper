@@ -1,17 +1,25 @@
 from requests import get
 from bs4 import BeautifulSoup as soup
 from time import sleep
+import os.path
 import re
 
 '''
     Obtains usernames from url, save them into csv file corresponding to Club ID.
     
     Args:
-        CID : club id corresponding to url
-        output_folder : optional argument. path to output
+        CID                     : club id corresponding to url
+        output_folder           : optional argument. path to output
+        ignore_present          : does not scrape if there's already a file present
         
 '''
-def get_users_from_club(CID , output_folder = "../data/"):
+def get_users_from_club(CID , output_folder = "../data/club_usernames/", ignore_present = True):
+
+    #Optional : do not grab anything if file already present
+    if ignore_present:
+        if os.path.isfile(output_folder + str(CID) + ".csv"):
+            print("Club {} : File already present".format(CID))
+            return
     
     #Url which accesses users of a club
     URL = "https://myanimelist.net/clubs.php?action=view&t=members&id={}&show={}".format(CID,{})
@@ -28,6 +36,7 @@ def get_users_from_club(CID , output_folder = "../data/"):
         #Termination condition when no table is found
         if html_soup.table == None:
             print ("Club {} : No more users to grab".format(CID))
+            sleep(3)
             return
         else:
 
@@ -57,12 +66,19 @@ def get_users_from_club(CID , output_folder = "../data/"):
     Obtains usernames from url, save them into csv file corresponding to forum thread ID.
     
     Args:
-        TID : forum thread id corresponding to url
-        output_folder : optional argument. path to output
+        TID                     : forum thread id corresponding to url
+        output_folder           : optional argument. path to output
+        ignore_present          : does not scrape if there's already a file present
         
 '''
-def get_users_from_forum_thread(TID , output_folder = "../data/forum_usernames/"):
+def get_users_from_forum_thread(TID , output_folder = "../data/forum_usernames/", ignore_present = True):
     
+    #Optional : do not grab anything if file already present
+    if ignore_present:
+        if os.path.isfile(output_folder + str(TID) + ".csv"):
+            print("Forum Topic {} : File already present".format(TID))
+            return
+
     #Url which accesses users of a club
     URL = 'https://myanimelist.net/forum/?topicid={}&show={}'.format(TID,{})
     #Offset at which users are displayed
@@ -78,6 +94,7 @@ def get_users_from_forum_thread(TID , output_folder = "../data/forum_usernames/"
         #Termination condition when no table is found
         if html_soup.table == None:
             print ("Forum Topic {} : No more users to grab".format(TID))
+            sleep(3)
             return
         else:
 

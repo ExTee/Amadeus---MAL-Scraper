@@ -1,12 +1,14 @@
 import utilities
 
+
+
 def main():
-	#Loop through all clubs
+	#Loop through all forums
 
 	#Serialized run
-	for forum_id in range(3274,1751000):
+	for forum_id in range(1,1751000):
 		try:
-			utilities.get_users_from_forum_thread(forum_id)
+			utilities.get_users_from_forum_thread(forum_id , ignore_present = True)
 		except:
 			pass
 
