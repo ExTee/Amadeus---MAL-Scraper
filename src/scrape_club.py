@@ -5,7 +5,7 @@ def main():
 	#Loop through all clubs
 
 	#Serialized run
-	for club_id in range(30000,100000):
+	for club_id in range(44530,100000):
 		utilities.get_users_from_club(club_id,"../data/club_usernames/30000-100000/", ignore_present = True)
 
 
