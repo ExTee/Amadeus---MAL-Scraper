@@ -19,10 +19,9 @@ find . -name '*.csv' | xargs -n 1000 -P 8 cat >> $root_dir/data/tmp/compiled_clu
 
 #Combine everything and outputs one file
 cd $root_dir/data/tmp
-cat compiled_forum_usernames compiled_club_usernames | sort -u > $root_dir/data/usernames.csv
+cat compiled_forum_usernames compiled_club_usernames | sort -u > $root_dir/data/processed/usernames.csv
 
 #remove tmp folder and print how many usernames
 rm -rf $root_dir/data/tmp
-wc -l $root_dir/data/usernames.csv 
-
+wc -l $root_dir/data/processed/usernames.csv 
 
