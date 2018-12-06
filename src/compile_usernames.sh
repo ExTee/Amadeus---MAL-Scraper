@@ -17,9 +17,12 @@ find . -name '*.csv' | xargs -n 1000 -P 8 cat >> $root_dir/data/tmp/compiled_for
 cd $root_dir/data/club_usernames
 find . -name '*.csv' | xargs -n 1000 -P 8 cat >> $root_dir/data/tmp/compiled_club_usernames
 
-#Combine everything and outputs one file
+#Combine everything and with old list, then outputs one file
 cd $root_dir/data/tmp
-cat compiled_forum_usernames compiled_club_usernames | sort -u > $root_dir/data/processed/usernames.csv
+cat compiled_forum_usernames compiled_club_usernames $root_dir/data/old/usernames.csv | sort -u > $root_dir/data/processed/usernames.csv
+
+#Move backup to old folder
+cp $root_dir/data/processed/usernames.csv $root_dir/data/old/
 
 #remove tmp folder and print how many usernames
 rm -rf $root_dir/data/tmp
