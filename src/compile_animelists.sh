@@ -1,6 +1,7 @@
 #!/bin/sh
 
 #This shell script is used to concatenate all csv files resulting from scrapes
+#Stores resulting file in data/processed/animelists.csv
 
 root_dir=`(cd ..; pwd)`
 echo "Compiling user anime lists ..."
