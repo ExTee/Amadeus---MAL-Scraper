@@ -191,10 +191,10 @@ def get_anime_list_from_user(username, output_folder="../data/user_anime_list/",
         response = requests.get(URL.format(OFFSET))
         
         # Check for request refusal
-        # Sleep for 0.5s before trying again
+        # Sleep for 1s before trying again
         while response.status_code == requests.codes.too_many_requests:
             print ("{} : ERROR {}".format(response.url, response.status_code))
-            sleep(0.5)
+            sleep(3)
             response = requests.get(URL.format(OFFSET))
         
         # test for 404 NOT FOUNDS
@@ -213,10 +213,9 @@ def get_anime_list_from_user(username, output_folder="../data/user_anime_list/",
                 writer = csv.writer(f , delimiter='|')
                 writer.writerows(anime_reviews)
     
-            print ("{} : Finished. {} Reviews --> {}".format(
+            print ("{} : Finished. {} Reviews".format(
                     username, 
-                    len(anime_reviews),
-                    output_file_path
+                    len(anime_reviews)
                     ))
             return True
 
